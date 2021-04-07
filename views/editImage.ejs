@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+    <main class="container">
+        <div class="center-align">
+            <form action="/images/<%= img._id %>/edit" method="POST">
+                Image Link: <input class="input" type="text" name="url" value="<%= img.url %>"/><br />
+                
+                <input class="button is-primary" type="submit" value="Submit Changes" />
+            </form>
+        </div>
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("partials/footer") %>
+  </body>
+</html>

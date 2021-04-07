@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("../partials/head") %>
+    <body>
+        <!-- THE HEADER TAG PARTIAL -->
+        <%- include("../partials/header") %>
+        <main class="container">
+            <div class="center-align">
+                <div>
+                    <h1>User Signup</h1>
+                    <form class="box" action="/auth/signup" method="post">
+                    <input class="input" type="text" placeholder="username" name="username" />
+                    <input class="input" type="password" placeholder="password" name="password" />
+                    <input class="button is-link is-outlined" type="submit" value="sign up" />
+                    </form>
+                </div>
+            </div>
+        </main>
+        <!-- THE HEAD TAG PARTIAL -->
+        <%- include("../partials/footer") %>
+    </body>
+</html>

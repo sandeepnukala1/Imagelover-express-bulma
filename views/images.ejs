@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- THE HEAD TAG PARTIAL -->
+  <%- include("partials/head") %>
+  <body>
+    <!-- THE HEADER TAG PARTIAL -->
+    <%- include("partials/header") %>
+    <main class="container">
+      <!-- *********DISPLAY Images********* -->
+      <div class="float-right">
+        <a href="/auth/logout"><button class="button is-danger">Logout</button></a>
+      </div>
+      
+       <!-- **********NEW Images FORM**************** -->
+       <div style="padding: 0.875rem;" class="center-align">
+        <form action="/images" method="post">
+            <div class="field has-addons">
+            <div class="control">
+                <input class="input" type="text" placeholder="Image URL" name="url" >
+            </div>
+            <div class="control">
+                <input class="button" type="submit" value="add image URL" />
+            </div>
+            </div>
+        </form>
+        <div style="padding-top: 0.5rem;" class="title">Your added images</div>
+      </div>
+     
+     <div style="padding: 0.875rem;" class="main-content">
+        <% for (img of images) { %>
+        <div class="child-content">
+            <form action="/images/<%= img._id %>?_method=DELETE" method="post">
+                <button style="background-color: #f14668;" class="delete" type="submit" value="Delete"></button>
+              </form>
+            <a href="/images/<%= img._id %>/edit">
+                <figure class="image is-5by4">
+                    <img src="<%= img.url %>" alt="">
+                </figure>
+              </a>
+        </div>
+        <% } %>
+     </div>
+      
+    </main>
+    <!-- THE HEAD TAG PARTIAL -->
+    <%- include("partials/footer") %>
+  </body>
+</html>

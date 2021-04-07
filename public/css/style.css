@@ -1,0 +1,25 @@
+.center-align {
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+}
+
+.container {
+  min-height: 73vh;
+}
+
+.float-right {
+  padding: 0.875rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.child-content {
+  flex: 1 0 21%;
+  margin: 5px;
+}
